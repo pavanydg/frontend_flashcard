@@ -31,8 +31,8 @@ export const CreateCard = () => {
       <NavBar/>
       <div className="mt-5 text-3xl font-bold text-center text-white ">Create FlashCards</div>
       <div className="flex flex-col justify-center items-center">
-        <div className="mt-24 border-2 border-zinc-600 bg-[#191919] rounded-xl shadow-lg max-w-[600px] w-2/3 h-[400px] flex flex-col items-center">
-            <div className="mt-10">
+        <div className="mt-24 border-2 border-zinc-600 bg-[#191919] rounded-xl shadow-lg lg:w-2/3 max-w-[600px] h-[400px] flex flex-col items-center">
+            <div className="mt-10 p-2">
               <input
                 className="text-white p-2 border-2 rounded-lg border-gray-800 w-96 bg-gray-900"
                 placeholder="Question or title"
