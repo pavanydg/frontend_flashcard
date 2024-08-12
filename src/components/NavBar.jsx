@@ -44,7 +44,7 @@ export default function () {
       <nav className="bg-black border-gray-200 ml-[25px] mr-[25px]">
         <div className=" flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex items-center">
-            <Link to="/home">
+            <Link to="/">
               <a className="flex items-center space-x-3">
                 <span className="self-center text-2xl font-semibold whitespace-nowrap text-red-600">
                   LearnCardPro

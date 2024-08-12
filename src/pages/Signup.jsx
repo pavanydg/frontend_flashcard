@@ -21,7 +21,7 @@ export const Signup = () => {
       alert("You have registered successfully")
       const { token } = response.data;
       localStorage.setItem('jwtToken', token);
-      navigate("/home")
+      navigate("/")
     }catch(e){
       console.log(e);
     }

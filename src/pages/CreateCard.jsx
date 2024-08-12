@@ -19,7 +19,7 @@ export const CreateCard = () => {
         }}
       );
       alert("Flashcard created successfully")
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       alert("Incorrect format");
       console.log(error);

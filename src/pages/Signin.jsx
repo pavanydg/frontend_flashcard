@@ -19,7 +19,7 @@ export const Signin = () => {
       // Store the token in localStorage
       localStorage.setItem('jwtToken', token);
       // Redirect to a protected route or handle post-login logic
-      navigate("/home")
+      navigate("/")
     } catch (error) {
       alert("Incorrect credentials")
       console.log(error)
