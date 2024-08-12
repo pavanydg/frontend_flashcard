@@ -8,7 +8,6 @@ export default function () {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Retrieve the token from localStorage
     const token = localStorage.getItem("jwtToken");
 
     if (token) {
