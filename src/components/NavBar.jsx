@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
 
 export default function () {
   const [user, setUser] = useState("");
@@ -12,7 +11,7 @@ export default function () {
 
     if (token) {
       try {
-        const decodedToken = jwtDecode(token);
+        const decodedToken = parseJwt(token);
         const user = decodedToken.username;
         setUser(user);
       } catch (error) {
@@ -24,6 +23,20 @@ export default function () {
   const logout = () => {
     localStorage.removeItem("jwtToken");
     navigate("/signin");
+  };
+
+  const parseJwt = (token) => {
+    try {
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+      return JSON.parse(jsonPayload);
+    } catch (error) {
+      console.error("Failed to parse JWT:", error);
+      return null;
+    }
   };
 
   return (
