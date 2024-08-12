@@ -48,10 +48,10 @@ export const EditComp = ({ques,ans,fid,onClose}) => {
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
-        <div className="relative card mt-24 border-2 border-zinc-600 bg-[#191919] rounded-xl shadow-lg max-w-[600px] h-[400px] flex flex-col items-center p-5">
+        <div className="relative card mt-24 border-2 border-zinc-600 bg-[#191919] rounded-xl shadow-lg w-[330px] md:w-[600px] h-[400px] flex flex-col items-center p-5">
           <div className="mt-10">
             <input
-              className="text-white p-2 border-2 rounded-lg border-gray-800 w-96 bg-gray-900"
+              className="text-white p-2 border-2 rounded-lg border-gray-800 w-72 md:w-96 bg-gray-900"
               placeholder="Question or title"
               value={question}
               onChange={(e) => {
@@ -61,7 +61,7 @@ export const EditComp = ({ques,ans,fid,onClose}) => {
           </div>
           <div className="mt-5">
             <textarea
-              className="text-white p-2 border-2 rounded-lg border-gray-800 w-96 bg-gray-900"
+              className="text-white p-2 border-2 rounded-lg border-gray-800 w-72 md:w-96 bg-gray-900"
               placeholder="answer or explaination"
               value={answer}
               onChange={(e) => {
@@ -70,7 +70,7 @@ export const EditComp = ({ques,ans,fid,onClose}) => {
             />
           </div>
           <div className="flex gap-3">
-            <div className="mt-5 bg-red-600 text-white p-2 rounded-3xl hover:bg-red-800 cursor-pointer flex justify-center items-center" onClick={editCard}>
+            <div className="mt-5 bg-red-600 text-white p-2 rounded-3xl hover:bg-red-800 cursor-pointer flex justify-center items-center text-sm md:text-base" onClick={editCard}>
               Edit flashcard
             </div>
             <div className="mt-5 border text-white p-2 rounded-3xl cursor-pointer hover:bg-gray-200 hover:text-black flex justify-center items-center" onClick={deleteCard}>

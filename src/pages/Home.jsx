@@ -78,7 +78,7 @@ export const Home = () => {
               </div>
             </div>
           ) : (
-            <div>Loading...</div>
+            <div className=" text-white flex justify-center items-center">Loading...</div>
           )}
         </div>
         <div className="flex gap-16 mt-5">

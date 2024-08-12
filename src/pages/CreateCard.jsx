@@ -7,18 +7,22 @@ const backendUrl = import.meta.env.VITE_BACKEND_URL;
 export const CreateCard = () => {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const create = async (e) => {
     e.preventDefault();
     try {
-      const token = localStorage.getItem("jwtToken")
+      const token = localStorage.getItem("jwtToken");
       const response = await axios.post(
-        `${backendUrl}/flashcards/create`,{question,answer},{headers: {
-          'Authorization':`${token}`
-        }}
+        `${backendUrl}/flashcards/create`,
+        { question, answer },
+        {
+          headers: {
+            Authorization: `${token}`,
+          },
+        }
       );
-      alert("Flashcard created successfully")
+      alert("Flashcard created successfully");
       navigate("/");
     } catch (error) {
       alert("Incorrect format");
@@ -28,31 +32,36 @@ export const CreateCard = () => {
 
   return (
     <div className="font-outfit">
-      <NavBar/>
-      <div className="mt-5 text-3xl font-bold text-center text-white ">Create FlashCards</div>
+      <NavBar />
+      <div className="mt-5 text-3xl font-bold text-center text-white ">
+        Create FlashCards
+      </div>
       <div className="flex flex-col justify-center items-center">
-        <div className="mt-24 border-2 border-zinc-600 bg-[#191919] rounded-xl shadow-lg lg:w-2/3 max-w-[600px] h-[400px] flex flex-col items-center">
-            <div className="mt-10 p-2">
-              <input
-                className="text-white p-2 border-2 rounded-lg border-gray-800 w-96 bg-gray-900"
-                placeholder="Question or title"
-                onChange={(e) => {
-                  setQuestion(e.target.value)
-                }}
-              />
-            </div>
-            <div className="mt-5">
-              <textarea
-                className="text-white p-2 border-2 rounded-lg border-gray-800 w-96 bg-gray-900"
-                placeholder="answer or explaination"
-                onChange={(e) => {
-                  setAnswer(e.target.value)
-                }}
-              />
-            </div>
-            <div className="mt-5 bg-red-600 text-white p-2 rounded-3xl hover:bg-red-800 cursor-pointer" onClick={create}>
-              Add Flashcard
-            </div>
+        <div className="mt-24 border-2 border-zinc-600 bg-[#191919] rounded-xl shadow-lg w-[330px] lg:w-2/3 max-w-[600px] h-[400px] flex flex-col items-center">
+          <div className="mt-10 p-2">
+            <input
+              className="text-white p-2 border-2 rounded-lg border-gray-800 w-72 md:w-96 bg-gray-900"
+              placeholder="Question or title"
+              onChange={(e) => {
+                setQuestion(e.target.value);
+              }}
+            />
+          </div>
+          <div className="mt-5">
+            <textarea
+              className="text-white p-2 border-2 rounded-lg border-gray-800  w-72 md:w-96 bg-gray-900"
+              placeholder="answer or explaination"
+              onChange={(e) => {
+                setAnswer(e.target.value);
+              }}
+            />
+          </div>
+          <div
+            className="mt-5 bg-red-600 text-white p-2 rounded-3xl hover:bg-red-800 cursor-pointer"
+            onClick={create}
+          >
+            Add Flashcard
+          </div>
         </div>
       </div>
     </div>

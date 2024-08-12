@@ -13,7 +13,7 @@ export const Card = ({ question, answer, fid, onEdit,onClose }) => {
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
-        <div className="relative card mt-24 border-2 border-zinc-600 bg-[#191919] rounded-xl shadow-lg w-[400px] h-[400px] flex flex-col items-center justify-center hover:border-[#FCEDEF]">
+        <div className="relative card mt-24 border-2 border-zinc-600 bg-[#191919] rounded-xl shadow-lg w-[330px] md:w-[400px] h-[400px] flex flex-col items-center justify-center hover:border-[#FCEDEF]">
           <div>Question: {question}</div>
 
           <div>Answer: {answer}</div>
